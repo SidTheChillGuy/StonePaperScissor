@@ -54,47 +54,77 @@ int StonePaperScissor(char Player, char Computer)
 
 int main()
 {
+    // create chars
     char Player, Computer;
-    srand(time(0));
-    int number = rand() % 100 + 1;
 
-    if (number < 33)
+    // create a lock variable
+    int Statuslock;
+    Statuslock = 1;
+
+    do
     {
-        Computer = 's';
-    }
+        // create randon number generator
+        srand(time(0));
+        int number = rand() % 100 + 1;
 
-    else if (number > 33 && number < 66)
-    {
-        Computer = 'p';
-    }
+        // assign values to computer
+        if (number < 33)
+        {
+            Computer = 's';
+        }
 
-    else
-    {
-        Computer = 'r';
-    }
+        else if (number > 33 && number < 66)
+        {
+            Computer = 'p';
+        }
 
-    printf("Starting the game \n");
-    printf("Enter 's' for stone, 'p' for paper, 'r' for scissor \n");
-    scanf("%c", &Player);
+        else
+        {
+            Computer = 'r';
+        }
 
-    int final = StonePaperScissor(Player, Computer);
+        // start game UI after re generating the random number so the computer uses a new option every game
 
-    if (final == 0)
-    {
-        printf("Game Draw, Retry again \n");
-    }
+        printf("Starting the game \n");
+        printf(" \n");
+        printf("Enter 's' for stone, 'p' for paper, 'r' for scissor \n");
+        scanf(" %c", &Player);
+        printf(" \n");
 
-    else if (final == 1)
-    {
-        printf("Computer wins, \n");
-    }
+        int final = StonePaperScissor(Player, Computer);
 
-    else
-    {
-        printf("Player wins, \n");
-    }
+        if (final == 0)
+        {
+            printf("Game Draw, Retry again \n");
+        }
 
-    printf("Player selected %c and Computer selected %c \n", Player, Computer);
+        else if (final == 1)
+        {
+            printf("Computer wins, \n");
+        }
 
+        else
+        {
+            printf("Player wins, \n");
+        }
+
+        printf("Player selected %c and Computer selected %c \n", Player, Computer);
+        printf("\n");
+
+        printf("Do you want to re-play the game? \n");
+        printf("Enter 1 for yes and 0 for no. \n");
+        scanf(" %d", &Statuslock);
+
+        printf("You chose %d \n", Statuslock);
+        printf(" \n");
+
+    } while (Statuslock == 1);
+
+    // display message during exit 
+    printf("Thank you for playing \n");
+    printf("Simple Game using conditions made by: ");
+    printf("Siddhant Mahajan \n");
+    printf("Visit https://github.com/SidTheChillGuy for updates \n");
+    printf("\n");
     return 0;
 }
