@@ -120,11 +120,24 @@ int main()
 
     } while (Statuslock == 1);
 
+    //placeholder for array to store the score(not at all memory-friendly,might have to use 50 scores limit)
+
     // display message during exit 
     printf("Thank you for playing \n");
     printf("Simple Game using conditions made by: ");
     printf("Siddhant Mahajan \n");
     printf("Visit https://github.com/SidTheChillGuy for updates \n");
     printf("\n");
+
+    //make the cpu count lot of blank spaces so the program exits after some time
+    printf(" \n");
+    printf("Auto exit enabled! \n");
+    
+    int counter = 1;
+    do{
+        counter++;
+        printf("");
+    }
+    while(counter<=300000000);
     return 0;
 }
