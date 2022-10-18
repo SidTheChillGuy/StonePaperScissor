@@ -4,3 +4,4 @@ Using loops, variables and a random number generator, you can play against compu
 This method can be used for multiple purposes other then just games.
 
 Please run the executable in Powershell or terminal.
+Update: Latest version supports standalone as well as embedded execution.
