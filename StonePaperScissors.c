@@ -138,6 +138,6 @@ int main()
         counter++;
         printf("");
     }
-    while(counter<=300000000);
+    while(counter<=150000000);
     return 0;
 }
